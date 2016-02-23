@@ -1,8 +1,8 @@
 var country, state;
 
 function setCountry() {
-  var m = document.getElementById("country");
-  manufacturer = m.options[m.selectedIndex].value;
+  var c = document.getElementById("country");
+  country = c.options[c.selectedIndex].value;
 }
 
 function setState() {
