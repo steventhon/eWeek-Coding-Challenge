@@ -10,7 +10,7 @@ function setState() {
   state = s.options[s.selectedIndex].value;
 }
 
-function submit() {
+function submitForm() {
   var first = document.getElementById("firstName").value;
   var last = document.getElementById("lastName").value;
   var email = document.getElementById("email").value;
