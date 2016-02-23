@@ -11,7 +11,7 @@ function setState() {
 }
 
 function checkEmail(email) {
-  if (email.length() > 3)
+  if (email.length > 3)
   {
     return true;
   }
@@ -58,7 +58,7 @@ function submitForm() {
   {
     document.getElementById("passwordMsg").innerHTML = "Password required";
   }
-  else if (password.length() < 8)
+  else if (password.length < 8)
   {
     document.getElementById("passwordMsg").innerHTML = "Password needs at least 8 characters";
   }
