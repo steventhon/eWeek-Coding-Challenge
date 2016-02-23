@@ -10,6 +10,17 @@ function setState() {
   state = s.options[s.selectedIndex].value;
 }
 
+function checkEmail(email) {
+  if (email.length() > 3)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function submitForm() {
   var first = document.getElementById("firstName").value;
   var last = document.getElementById("lastName").value;
@@ -22,6 +33,38 @@ function submitForm() {
   else
   {
     document.getElementById("firstMsg").innerHTML = "";
+  }
+  if (!last)
+  {
+    document.getElementById("lastMsg").innerHTML = "Last Name required";
+  }
+  else
+  {
+    document.getElementById("lastMsg").innerHTML = "";
+  }
+  if (!email)
+  {
+    document.getElementById("emailMsg").innerHTML = "Email required";
+  }
+  else if (!checkEmail(email))
+  {
+    document.getElementById("emailMsg").innerHTML = "Invalid Email";
+  }
+  else
+  {
+    document.getElementById("emailMsg").innerHTML = "";
+  }
+  if (!password)
+  {
+    document.getElementById("passwordMsg").innerHTML = "Password required";
+  }
+  else if (password.length() < 8)
+  {
+    document.getElementById("passwordMsg").innerHTML = "Password needs at least 8 characters";
+  }
+  else
+  {
+    document.getElementById("passwordMsg").innerHTML = "";
   }
   if (country && state) {
     document.getElementById("msg").innerHTML = "Submitted successfully!";
