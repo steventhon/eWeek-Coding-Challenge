@@ -11,6 +11,18 @@ function setState() {
 }
 
 function submit() {
+  var first = document.getElementById("firstName").value;
+  var last = document.getElementById("lastName").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+  if (!first)
+  {
+    document.getElementById("firstMsg").innerHTML = "First Name required";
+  }
+  else
+  {
+    document.getElementById("firstMsg").innerHTML = "";
+  }
   if (country && state) {
     document.getElementById("msg").innerHTML = "Submitted successfully!";
   } else {
