@@ -26,6 +26,7 @@ function submitForm() {
   var last = document.getElementById("lastName").value;
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
+  var comment = document.getElementById("comment").value;
   if (!first)
   {
     document.getElementById("firstMsg").innerHTML = "First Name required";
@@ -65,6 +66,14 @@ function submitForm() {
   else
   {
     document.getElementById("passwordMsg").innerHTML = "";
+  }
+  if (!comment)
+  {
+    document.getElementById("commentMsg").innerHTML = "Comments required";
+  }
+  else
+  {
+    document.getElementById("commentMsg").innerHTML = "";
   }
   if (country && state) {
     document.getElementById("msg").innerHTML = "Submitted successfully!";
