@@ -21,6 +21,28 @@ function checkEmail(email) {
   }
 }
 
+function checkPassword(password) {
+  if (password.length < 8)
+  {
+    return false;
+  }
+  var nums = 0;
+  for (var i = 0, len = password.length; i < len; i++) {
+    if (!isNaN(password[i]))
+    {
+      nums++;
+    }
+  }
+  if (nums >= 2)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 function submitForm() {
   var first = document.getElementById("firstName").value;
   var last = document.getElementById("lastName").value;
@@ -59,9 +81,9 @@ function submitForm() {
   {
     document.getElementById("passwordMsg").innerHTML = "Password required";
   }
-  else if (password.length < 8)
+  else if (!checkPassword(password))
   {
-    document.getElementById("passwordMsg").innerHTML = "Password needs at least 8 characters";
+    document.getElementById("passwordMsg").innerHTML = "Password needs at least 8 characters, 2 need to be numbers";
   }
   else
   {
