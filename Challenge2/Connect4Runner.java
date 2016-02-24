@@ -5,7 +5,7 @@ public class Connect4Runner {
     {
         Scanner s = new Scanner(System.in);
         Connect4 game = new Connect4();
-        do
+        while (!game.checkWin() && !game.isBoardFull())
         {
             game.switchPlayer();
             game.printBoard();
@@ -19,8 +19,8 @@ public class Connect4Runner {
             {
                 System.out.println("Column is full.");
             }
-        } while (!game.checkWin() && !game.isBoardFull());
-        
+        }
+        game.printBoard();
         if (game.checkWin())
         {
             System.out.println(game.getCurPlayer() + " wins!");
