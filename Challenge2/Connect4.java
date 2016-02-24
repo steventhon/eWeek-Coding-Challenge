@@ -4,7 +4,7 @@ public class Connect4
   public final static int COLS = 7;
   private char curPlayer = 'X';
   private char[][] board;
-  public Connect4
+  public Connect4()
   {
     board = new char[ROWS][COLS];
     initBoard();
@@ -100,7 +100,7 @@ public class Connect4
   public boolean checkWinCol()
   {
     int count = 0;
-    for (int j = 0; j < COLS; i++) {
+    for (int j = 0; j < COLS; j++) {
       count = 0;
       for (int i = 0; i < ROWS; j++) {
         if (board[i][j] == curPlayer)
@@ -122,8 +122,8 @@ public class Connect4
   
   public boolean checkWin()
   {
-    return checkWinCol() && checkWinRow() &&
-      checkWinDiagTopDown() && checkWinDiagBottomUp();
+    return checkWinCol() && checkWinRow();
+        //&& checkWinDiagTopDown() && checkWinDiagBottomUp();
   }
   
 }
