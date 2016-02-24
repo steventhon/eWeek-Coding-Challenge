@@ -11,3 +11,8 @@ legend {
 p {
   font-size: 20px;
 }
+
+#submitButton {
+  width: 150px;
+  font-size: 150px;
+}
