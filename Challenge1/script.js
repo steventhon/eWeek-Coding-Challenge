@@ -105,7 +105,7 @@ function submitForm() {
   {
     document.getElementById("stateMsg").innerHTML = "";
   }
-  if (state && country && comment && password && email && last && first)
+  if (state && country && comment && checkPassword(password) && checkEmail(email) && last && first)
   {
     document.getElementById("msg").innerHTML = "Submitted successfully!";
   }
