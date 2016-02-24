@@ -1,5 +1,5 @@
 fieldset {
-  background: rgba(73,155,234,1);
+  background: rgb(105, 40, 132);
 }
 
 legend {
@@ -18,5 +18,5 @@ p {
 }
 
 span {
-  color: red;
+  color: rgb(228, 14, 14);
 }
