@@ -68,6 +68,8 @@ public class Connect4
       if (board[i][col] != '-')
       {
         board[i - 1][col] = curPlayer;
+        i = ROWS;
+        switchPlayer();
       }
     }
   }
