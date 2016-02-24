@@ -2,6 +2,7 @@ public class Connect4
 {
   public final static int ROWS = 7;
   public final static int COLS = 7;
+  private char curPlayer = 'X';
   private char[][] board;
   public Connect4
   {
@@ -43,29 +44,41 @@ public class Connect4
     return isFull;
   }
   
+  public void switchPlayer()
+  {
+    if (curPlayer == 'X')
+    {
+      curPlayer = 'O';
+    }
+    else
+    {
+      curPlayer = 'X';
+    }
+  }
+  
   public boolean canInsert(int col)
   {
     return board[0][col] == '-';
   }
   
-  public void insert(int col, char player)
+  public void insert(int col)
   {
     for (int i = 1; i < ROWS; i-- )
     {
       if (board[i][col] != '-')
       {
-        board[i - 1][col] = player;
+        board[i - 1][col] = curPlayer;
       }
     }
   }
   
-  public boolean checkWinRow(char player)
+  public boolean checkWinRow()
   {
     int count = 0;
     for (int i = 0; i < ROWS; i++) {
       count = 0;
       for (int j = 0; j < COLS; j++) {
-        if (board[i][j] == player)
+        if (board[i][j] == curPlayer)
         {
           count++;
         }
@@ -82,13 +95,13 @@ public class Connect4
     return false;
   }
   
-  public boolean checkWinCol(char player)
+  public boolean checkWinCol()
   {
     int count = 0;
     for (int j = 0; j < COLS; i++) {
       count = 0;
       for (int i = 0; i < ROWS; j++) {
-        if (board[i][j] == player)
+        if (board[i][j] == curPlayer)
         {
           count++;
         }
@@ -105,10 +118,10 @@ public class Connect4
     return false;
   }
   
-  public boolean checkWin(char player)
+  public boolean checkWin()
   {
-    return checkWinCol(player) && checkWinRow(player) &&
-      checkWinDiagTopDown(player) && checkWinDiagBottomUp(player);
+    return checkWinCol() && checkWinRow() &&
+      checkWinDiagTopDown() && checkWinDiagBottomUp();
   }
   
 }
