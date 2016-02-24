@@ -6,4 +6,4 @@
 
 3. Run the Runner (java Connect4Runner)
 
-Supports win check vertically and horizontally.
+Supports win check vertically, horizontally, and diagonally.
