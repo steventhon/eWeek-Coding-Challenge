@@ -11,14 +11,8 @@ function setState() {
 }
 
 function checkEmail(email) {
-  if (email.length > 3)
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
+  var re = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+  return re.test(email);
 }
 
 function checkPassword(password) {
