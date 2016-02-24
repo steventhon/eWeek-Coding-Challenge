@@ -1,1 +1,13 @@
+fieldset {
+  background: rgba(73,155,234,1);
+}
 
+legend {
+  background: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 20px;
+}
