@@ -4,30 +4,40 @@ public class Connect4Runner {
     public static void main(String[] args)
     {
         Scanner s = new Scanner(System.in);
-        Connect4 game = new Connect4();
-        while (!game.checkWin() && !game.isBoardFull())
+        String response;
+        do
         {
-            game.switchPlayer();
-            game.printBoard();
-            System.out.println("Enter row to insert piece (0-" + (game.ROWS - 1) +")");
-            int col = s.nextInt();
-            if (game.canInsert(col))
+            Connect4 game = new Connect4();
+            while (!game.checkWin() && !game.isBoardFull())
             {
-                game.insert(col);
+                game.switchPlayer();
+                game.printBoard();
+                System.out.println("Enter row to insert piece (0-" + (game.ROWS - 1) +")");
+                int col = s.nextInt();
+                if (game.canInsert(col))
+                {
+                    game.insert(col);
+                }
+                else
+                {
+                    System.out.println("Column is full.");
+                }
+            }
+            game.printBoard();
+            if (game.checkWin())
+            {
+                System.out.println(game.getCurPlayer() + " wins!");
             }
             else
             {
-                System.out.println("Column is full.");
+                System.out.println("Draw!");
             }
-        }
-        game.printBoard();
-        if (game.checkWin())
-        {
-            System.out.println(game.getCurPlayer() + " wins!");
-        }
-        else
-        {
-            System.out.println("Draw!");
-        }
+            
+            do
+            {
+                System.out.println("Play again? (y/n)");
+                response = s.next();
+            } while (!response.equals("y") && !response.equals("n"));
+        } while (response.equals("y"));
     }
 }
