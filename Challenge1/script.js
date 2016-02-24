@@ -91,10 +91,27 @@ function submitForm() {
   {
     document.getElementById("commentMsg").innerHTML = "";
   }
-  if (country && state) {
+  if (!country) {
+    document.getElementById("countryMsg").innerHTML = "Country required";
+  }
+  else
+  {
+    document.getElementById("countryMsg").innerHTML = "";
+  }
+  if (!state) {
+    document.getElementById("stateMsg").innerHTML = "State required";
+  }
+  else
+  {
+    document.getElementById("stateMsg").innerHTML = "";
+  }
+  if (state && country && comment && password && email && last && first)
+  {
     document.getElementById("msg").innerHTML = "Submitted successfully!";
-  } else {
-    document.getElementById("msg").innerHTML = "Please fill all required fields.";
+  }
+  else
+  {
+    document.getElementById("msg").innerHTML = "Please fill all fields";
   }
 }
 
